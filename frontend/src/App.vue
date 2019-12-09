@@ -1,25 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-menu :default-active="activeIndex" mode="horizontal" router>
+      <el-menu-item index="home" :route="{ name:'home' }">Home</el-menu-item>
+      <el-menu-item index="about" :route="{ name:'about' }">About</el-menu-item>
+    </el-menu>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      activeIndex: this.$route.name
+    }
   }
 }
 </script>
