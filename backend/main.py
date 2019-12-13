@@ -1,7 +1,8 @@
 from flask import Flask, render_template
-from flask_restful import Api, Resource
+import api
 
 app = Flask(__name__, static_folder='../frontend/dist/static', template_folder='../frontend/dist')
+app.register_blueprint(api.api_bp)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
