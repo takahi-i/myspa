@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_restful import Api, Resource
 
 app = Flask(__name__, static_folder='../frontend/dist/static', template_folder='../frontend/dist')
 
